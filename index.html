@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalPro - E-commerce de Marketing Digital</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Cursor personalizado -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <header>
+    <div class="container header-content">
+      <h1>DigitalPro</h1>
+      <nav>
+        <a href="./index.html"><i class="fas fa-home"></i> Início</a>
+        <a href="./produtos.html"><i class="fas fa-shopping-cart"></i> Produtos</a>
+        <a href="./sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="./contato.html"><i class="fas fa-envelope"></i> Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="reveal">Marketing Digital Transformador</h2>
+      <p class="reveal">Produtos digitais exclusivos para impulsionar seu negócio e aumentar sua presença online.</p>
+      <a href="#produtos" class="cta-button reveal">Explorar Produtos <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- Produtos Section -->
+  <section id="produtos" class="products-section">
+    <div class="container">
+      <h2 class="section-title reveal">Nossos Produtos</h2>
+      
+      <div class="search-container reveal">
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="Buscar produtos..." id="searchInput">
+          <button class="search-button" id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      
+      <div class="categories reveal">
+        <button class="category-button active" data-category="todos">Todos</button>
+        <button class="category-button" data-category="cursos">Cursos</button>
+        <button class="category-button" data-category="ebooks">Ebooks</button>
+        <button class="category-button" data-category="templates">Templates</button>
+        <button class="category-button" data-category="ferramentas">Ferramentas</button>
+      </div>
+      
+      <div class="products" id="productsList">
+        <!-- Produto 1 -->
+        <div class="product reveal" data-category="cursos">
+          <span class="feature-badge">Mais Vendido</span>
+          <img src="https://via.placeholder.com/300x200" alt="Curso de Instagram" />
+          <div class="product-content">
+            <h3>Curso Instagram Pro</h3>
+            <p>Aprenda a crescer sua conta de forma orgânica e vender todos os dias usando estratégias comprovadas de marketing.</p>
+            <div class="product-footer">
+              <span class="price">R$ 97,00</span>
+              <button class="buy-button" onclick="addToCart('Curso Instagram Pro', 97)">Comprar <i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 2 -->
+        <div class="product reveal" data-category="ebooks">
+          <img src="https://via.placeholder.com/300x200" alt="Ebook Tráfego Pago" />
+          <div class="product-content">
+            <h3>Ebook Tráfego Pago</h3>
+            <p>Domine os anúncios no Google e Facebook com técnicas avançadas para aumentar seu ROI e reduzir custos.</p>
+            <div class="product-footer">
+              <span class="price">R$ 47,00</span>
+              <button class="buy-button" onclick="addToCart('Ebook Tráfego Pago', 47)">Comprar <i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 3 -->
+        <div class="product reveal" data-category="templates">
+          <img src="https://via.placeholder.com/300x200" alt="Templates para Stories" />
+          <div class="product-content">
+            <h3>Templates para Stories</h3>
+            <p>Pack com 50 artes editáveis para Instagram que vão transformar seu feed e aumentar o engajamento.</p>
+            <div class="product-footer">
+              <span class="price">R$ 29,00</span>
+              <button class="buy-button" onclick="addToCart('Templates para Stories', 29)">Comprar <i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 4 -->
+        <div class="product reveal" data-category="ferramentas">
+          <span class="feature-badge">Novo</span>
+          <img src="https://via.placeholder.com/300x200" alt="Bot de Automação" />
+          <div class="product-content">
+            <h3>Bot de Automação</h3>
+            <p>Automatize seu atendimento no Instagram e WhatsApp com inteligência artificial para converter mais clientes.</p>
+            <div class="product-footer">
+              <span class="price">R$ 199,00</span>
+              <button class="buy-button" onclick="addToCart('Bot de Automação', 199)">Comprar <i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 5 -->
+        <div class="product reveal" data-category="cursos">
+          <img src="https://via.placeholder.com/300x200" alt="Curso SEO Maestro" />
+          <div class="product-content">
+            <h3>Curso SEO Maestro</h3>
+            <p>Domine as técnicas de otimização para mecanismos de busca e alcance as primeiras posições no Google.</p>
+            <div class="product-footer">
+              <span class="price">R$ 147,00</span>
+              <button class="buy-button" onclick="addToCart('Curso SEO Maestro', 147)">Comprar <i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 6 -->
+        <div class="product reveal" data-category="ebooks">
+          <span class="feature-badge">Promoção</span>
+          <img src="https://via.placeholder.com/300x200" alt="Ebook Copywriting" />
+          <div class="product-content">
+            <h3>Ebook Copywriting</h3>
+            <p>Aprenda a escrever textos que vendem e transforme suas palavras em máquinas de conversão.</p>
+            <div class="product-footer">
+              <span class="price">R$ 39,90</span>
+              <button class="buy-button" onclick="addToCart('Ebook Copywriting', 39.9)">Comprar <i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section id="sobre" class="about-section">
+    <div class="container">
+      <h2 class="section-title reveal">Sobre Nós</h2>
+      <div class="about-content reveal">
+        <div class="about-text">
+          <p>A DigitalPro nasceu com a missão de transformar negócios através do marketing digital. Nossa equipe de especialistas cria produtos digitais de alta qualidade para ajudar empreendedores e empresas a conquistarem mais clientes e aumentarem seu faturamento.</p>
+          <p>Com mais de 10.000 clientes satisfeitos e uma taxa de satisfação de 98%, somos referência no mercado de infoprodutos e soluções digitais para negócios de todos os tamanhos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato Section -->
+  <section id="contato" class="contact-section">
+    <div class="container">
+      <h2 class="section-title reveal">Fale Conosco</h2>
+      <div class="contact-form reveal">
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Seu Nome" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Seu Email" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Sua Mensagem" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>DigitalPro</h3>
+          <p>Transformando negócios através do marketing digital desde 2022.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Links Rápidos</h3>
+          <a href="#">Início</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#sobre">Sobre Nós</a>
+          <a href="#contato">Contato</a>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Categorias</h3>
+          <a href="#">Cursos</a>
+          <a href="#">Ebooks</a>
+          <a href="#">Templates</a>
+          <a href="#">Ferramentas</a>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-envelope"></i> contato@digitalpro.com</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 DigitalPro. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão de alternar tema -->
+  <div class="theme-switch">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Cursor personalizado
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+    
+    // Animação de scroll
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', reveal);
+    reveal(); // Para mostrar elementos visíveis no carregamento inicial
+    
+    // Filtragem de categorias
+    const categoryButtons = document.querySelectorAll('.category-button');
+    const products = document.querySelectorAll('.product');
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remover classe ativa de todos os botões
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Adicionar classe ativa ao botão clicado
+        button.classList.add('active');
+        
+        const category = button.getAttribute('data-category');
+        
+        // Filtrar produtos
+        products.forEach(product => {
+          if (category === 'todos' || product.getAttribute('data-category') === category) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Pesquisa
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    
+    function searchProducts() {
+      const searchTerm = searchInput.value.toLowerCase();
+      
+      products.forEach(product => {
+        const title = product.querySelector('h3').textContent.toLowerCase();
+        const description = product.querySelector('p').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+    
+    searchButton.addEventListener('click', searchProducts);
+    searchInput.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        searchProducts();
+      }
+    });
+    
+    // Formulário de contato
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Aqui você adicionaria lógica para enviar o formulário
+      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      contactForm.reset();
+    });
+    
+    // Carrinho de compras
+    let cart = [];
+    
+    function addToCart(productName, price) {
+      cart.push({ name: productName, price: price });
+      
+      // Notificação de produto adicionado
+      alert(`${productName} adicionado ao carrinho!`);
+      
+      // Aqui você implementaria a funcionalidade completa do carrinho
+    }
+    
+    // Alternar tema
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeIcon = themeSwitch.querySelector('i');
+    
+    themeSwitch.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      
+      // Alternar ícone
+      if (themeIcon.classList.contains('fa-moon')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    });
+  </script>
+</body>
+</html>

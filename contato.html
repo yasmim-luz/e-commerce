@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - DigitalPro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Cursor personalizado -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <h1>DigitalPro</h1>
+      <nav>
+        <a href="./index.html"><i class="fas fa-home"></i> Início</a>
+        <a href="./produtos.html"><i class="fas fa-shopping-cart"></i> Produtos</a>
+        <a href="./sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="./contato.html"><i class="fas fa-envelope"></i> Contato</a>
+        <a href="./login.html" class="active"><i class="fas fa-user"></i> Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="reveal">Área do Usuário</h2>
+      <p class="reveal">Acesse sua conta ou cadastre-se para aproveitar todos os recursos da DigitalPro.</p>
+    </div>
+  </section>
+
+  <!-- Login/Register Section -->
+  <section class="login-section">
+    <div class="container login-container">
+      <div class="login-form-container">
+        <h3 class="section-title">Entrar na sua conta</h3>
+        <div class="login-options">
+          <button class="login-option active" data-option="login">Login</button>
+          <button class="login-option" data-option="register">Cadastro</button>
+        </div>
+
+        <!-- Formulário de Login -->
+        <form id="loginForm" class="option-content active">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Senha" required>
+          </div>
+          <button type="submit" class="cta-button">Entrar</button>
+        </form>
+
+        <!-- Formulário de Cadastro -->
+        <form id="registerForm" class="option-content">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nome completo" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Senha" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Confirmar senha" required>
+          </div>
+          <button type="submit" class="cta-button">Cadastrar</button>
+        </form>
+      </div>
+
+      <div class="login-image">
+        <div class="login-image-content float-animation">
+          <h3>Bem-vindo à DigitalPro!</h3>
+          <p>Tenha acesso a recursos exclusivos:</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Acompanhar pedidos</li>
+            <li><i class="fas fa-check"></i> Promoções exclusivas</li>
+            <li><i class="fas fa-check"></i> Suporte prioritário</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>DigitalPro</h3>
+          <p>Transformando negócios através do marketing digital desde 2022.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Links Rápidos</h3>
+          <a href="index.html">Início</a>
+          <a href="produtos.html">Produtos</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+          <a href="login.html">Login</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-envelope"></i> suporte@digitalpro.com</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-0000</p>
+          <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 DigitalPro. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="theme-switch">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <script>
+    // Alternância entre login e cadastro
+    const loginOptions = document.querySelectorAll('.login-option');
+    const optionContents = document.querySelectorAll('.option-content');
+    loginOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        loginOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+        optionContents.forEach(content => content.classList.remove('active'));
+        document.getElementById(option.dataset.option + 'Form').classList.add('active');
+      });
+    });
+
+    // Cursor personalizado
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+
+    // Tema escuro/claro
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeIcon = themeSwitch.querySelector('i');
+    themeSwitch.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      themeIcon.classList.toggle('fa-sun');
+      themeIcon.classList.toggle('fa-moon');
+    });
+
+    // Formulários
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Login efetuado com sucesso!');
+    });
+    document.getElementById('registerForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Cadastro realizado com sucesso!');
+    });
+  </script>
+</body>
+</html>
